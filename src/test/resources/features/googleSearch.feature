@@ -3,5 +3,11 @@ Feature: Google search functionality
   i hould be able to search whatever I want and see relevant information
 
   Scenario:  Search page tiitle verification
-    When user ison Google sarch page
+    When user is on Google sarch page
     Then user should see title is Google
+
+  Scenario: Search functoionality result title verification
+    Given user is on Google search page
+    When user types apple and clicks enter
+    Then user sees apple in the google title
+

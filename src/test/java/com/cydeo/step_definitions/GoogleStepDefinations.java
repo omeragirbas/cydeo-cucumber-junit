@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class GoogleStepDefinations {
-    @When("user ison Google sarch page")
+    @When("user is on Google sarch page")
     public void user_ison_google_sarch_page() {
         // Write code here that turns the phrase above into concrete actions
         Driver.getDriver().get("https://www.google.com");
