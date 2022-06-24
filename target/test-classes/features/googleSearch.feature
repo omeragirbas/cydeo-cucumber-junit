@@ -3,7 +3,7 @@ Feature: Google search functionality
   i hould be able to search whatever I want and see relevant information
 
   Scenario:  Search page tiitle verification
-    When user is on Google sarch page
+    When user is on Google search page
     Then user should see title is Google
   @wip
   Scenario: Search functoionality result title verification
