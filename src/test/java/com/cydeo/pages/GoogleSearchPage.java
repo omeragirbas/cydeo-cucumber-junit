@@ -7,10 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class GoogleSearchPage {
- //constructor bu
+ //constructor
     public GoogleSearchPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(name = "q")
     public WebElement searchBox;
+    @FindBy(id = "L2AGLb")
+    public WebElement accepted;
+    @FindBy(linkText = "English")
+    public WebElement english;
+
 }
