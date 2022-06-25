@@ -67,5 +67,12 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
 
+    /**
+     * This method will verify if the current Url contains expected value
+     * @param expectedInURL
+     */
+    public static void verifyUrlContains(String expectedInURL){
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
+    }
 
 }
