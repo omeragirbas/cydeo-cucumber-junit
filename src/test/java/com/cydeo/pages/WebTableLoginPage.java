@@ -1,5 +1,6 @@
 package com.cydeo.pages;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,4 +17,28 @@ public class WebTableLoginPage {
     public WebElement inputPassword;
     @FindBy(xpath = "//button[.='Login']")
     public WebElement loginButton;
+
+    public void login(){
+        this.inputUsername.sendKeys("Test");
+        this.inputPassword.sendKeys("Tester");
+        this.loginButton.click();
+    }
+
+    /**
+     * This method will accept two arguments and login.
+     * @param username
+     * @param password
+     */
+    public void login(String username,String password){
+        inputUsername.sendKeys(username);
+        inputPassword.sendKeys(password);
+        loginButton.click();
+
+    }
+
+    public void loginWithConfig(){
+        inputUsername.sendKeys(ConfigurationReader.getProperty("webtable.username"));
+        inputPassword.sendKeys(ConfigurationReader.getProperty("web.table.pw"));
+        loginButton.click();
+    }
 }

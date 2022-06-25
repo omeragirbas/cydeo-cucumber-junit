@@ -8,10 +8,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.Map;
+
 public class WebTable_StepDefinations {
     WebTableLoginPage webTableLoginPage= new WebTableLoginPage();
-    @Given("user is onthe login page of web table app")
-    public void user_is_onthe_login_page_of_web_table_app() {
+    @Given("user is on the login page of web table app")
+    public void user_is_on_the_login_page_of_web_table_app() {
         String url= ConfigurationReader.getProperty("web.table.url");
         Driver.getDriver().get(url);
     }
@@ -37,9 +39,19 @@ public class WebTable_StepDefinations {
     }
 
     @When("user enters username {string} password {string} and logins")
-    public void userEntersUsernamePasswordAndLogins(String arg0, String arg1) {
-    webTableLoginPage.inputUsername.sendKeys(arg0);
-    webTableLoginPage.inputPassword.sendKeys(arg1);
-    webTableLoginPage.loginButton.click();
+    public void userEntersUsernamePasswordAndLogins(String username, String password) {
+    //webTableLoginPage.inputUsername.sendKeys(arg0);
+    //webTableLoginPage.inputPassword.sendKeys(arg1);
+    //webTableLoginPage.loginButton.click();
+    webTableLoginPage.login(username,password);
+    }
+    @When("User enters below credentials")
+    public void user_enters_below_credentials(Map<String, String> credentials) {
+        //System.out.println("credentials.get(\"username\") = " + credentials.get("username"));
+        //System.out.println("credentials.get(\"password\") = " + credentials.get("password"));
+        //webTableLoginPage.inputUsername.sendKeys(credentials.get("username"));
+        //webTableLoginPage.inputPassword.sendKeys(credentials.get("password"));
+       // webTableLoginPage.loginButton.click();
+        webTableLoginPage.login(credentials.get("username"),credentials.get("password"));
     }
 }
