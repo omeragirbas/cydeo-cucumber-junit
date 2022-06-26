@@ -12,7 +12,7 @@ Background: user is on the login page
   Scenario: Positive login scenario
     When user enters username "Test" password "Tester" and logins
     Then user should see url contains orders
-  @wip
+
   Scenario: User should be able to see all 12 months in months dropdown
     When User enters below credentials
       | username | Test |
